@@ -1,15 +1,19 @@
 name: learn-github-actions
-on: [push]
+on: [push] # Defines the trigger event.  
 
+# Jobs: groups together all the jobs that run in the workflow 
 jobs:
-  check-bats-version:
+  check-bats-version: # Defines the job name which will appear in UI
+    # runs-on: Defines whcih runner we want to use for this job
     runs-on: ubuntu-latest
 
+    # groups together all the steps that run in the job
     steps: 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # Uses v4 of actions/checkout 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      # The run keyword tells the job to execute a command on runner 
       - run: npm install -g bats 
       - run: bats -v
 
