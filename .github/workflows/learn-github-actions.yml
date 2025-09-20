@@ -1,4 +1,5 @@
 name: learn-github-actions
+run-name: ${{ github.actor }} is learning Github Actions
 on: [push] # Defines the trigger event.  
 
 # Jobs: groups together all the jobs that run in the workflow 
